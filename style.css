@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+:root {
+    --clr-primary-very-dark-blue:  hsl(233, 47%, 7%);
+    --clr-dark-desaturated-blue:  hsl(244, 38%, 16%);
+    --clr-soft-violent: hsl(277, 64%, 61%);
+
+    --clr-neutral-white: hsl(0, 0%, 100%);
+    --clr-slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+    --clr-slightly-transparent-white:  hsla(0, 0%, 100%, 0.6);
+
+    --fs-primary: 0.9375rem;
+
+    --fw-primary: 400;
+    --fw-bold: 500;
+    --fw-bolder: 700;
+
+    --ff-primary: 'Inter', sans-serif;
+    --ff-accent: 'Lexend Deca', sans-serif;
+
+
+}
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg
+ {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+html {
+    font-size: var(--fs-primary);
+    font-weight: var(--fw-primary);
+    font-family: var(--ff-primary);
+}
+
+
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-primary-very-dark-blue);
+    padding: 2em;
+}
+
+
+.stats-card {
+    background-color: var(--clr-dark-desaturated-blue);
+    border-radius: 0.3em;
+    overflow:hidden;
+    max-width: 40em;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+.stats-content-container {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-center {
+    text-align:center
+}
+
+.stats-intro {
+    line-height: 1.2;
+}
+
+.stats-numbers,
+.stats-intro {
+  margin-bottom: 1em;
+  font-weight: var(--fw-bolder);
+  color: var(--clr-neutral-white);
+}
+
+.insights {
+    color: var(--clr-soft-violent);
+}
+
+.stats-description {
+    color: var(--clr-slightly-transparent-white);
+    margin-bottom: 2em;
+    font-weight: var(--fw-bold);
+
+}
+
+.stats-data {
+  color: var(--clr-slightly-transparent-white);
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  font-weight: var(--fw-bold);
+}
+
+.stats-numbers {
+  line-height: 0.9;
+  letter-spacing: 1.2px;
+  font-size: 1.2rem ;
+}
+
+.flex-stats-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+
+
+@media (min-width: 800px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-primary-very-dark-blue);
+    padding: 0;
+}
+
+  .stats-card {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 60em;
+  }
+
+  .stats-content-container {
+    justify-content: center;
+    padding: 3em;
+  }
+
+  .stats-content-container {
+    order: -1;
+  }
+
+  .stats-intro,
+  .stats-numbers,
+  .stats-description {
+    text-align: start;
+  }
+
+  .stats-description {
+    margin-bottom: 2.5em;
+  }
+
+  .flex-stats-group {
+    flex-direction: row;
+    gap: 3em;
+  }
+}
+
